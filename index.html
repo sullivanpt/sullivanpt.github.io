@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Patrick Trent Sullivan</title>
+  <style>
+    /* arbitrary CSS to make it pretty */
+    body {
+      color: #2D3322;
+      font-family: Verdana, Geneva, sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      text-transform: uppercase;
+    }
+
+    h2 {
+      background-color: #C1C1C1;
+      text-align: center;
+    }
+
+    ul.checked {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul.checked li:before {
+      content: '✓ ';
+    }
+
+    ul.checked li {
+      margin-bottom: 0.5em;
+    }
+
+    ul.unchecked {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    ul.unchecked.apart li {
+      margin-bottom: 0.5em;
+    }
+
+    .page-icon img {
+      width: 10em;
+    }
+
+    /* responsive CSS to layout the sections on the page */
+    .wrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 0px;
+      /* grid-auto-rows: max-content; */
+      grid-template-rows: max-content 1fr max-content;
+    }
+
+    .page-title {
+      grid-column: 1 / span 2;
+      grid-row: 1;
+
+      padding: 10px;
+      font-size: 4.5vw;
+    }
+
+    .page-contact {
+      grid-column: 3;
+      grid-row: 1;
+      background-color: #F7BAA1;
+
+      padding: 10px;
+      font-size: 1.1vw;
+      text-align: right;
+    }
+
+    .page-contact.page-2 {
+      grid-row: 3;
+    }
+
+    .page-sidebar {
+      grid-column: 3;
+      grid-row: 2;
+      background-color: #F7BAA1;
+
+      padding: 10px;
+    }
+
+    .page-siebar.page-2 {
+      grid-row: 1 / span 2;
+    }
+
+    .page-icon {
+      grid-column: 3;
+      grid-row: 3;
+      background-color: #F7BAA1;
+
+      padding: 10px;
+      text-align: right;
+    }
+
+    .page-body {
+      grid-column: 1 / span 2;
+      grid-row: 2 / span 2;
+
+      padding: 10px;
+      font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+      font-size: 11pt;
+    }
+
+    .page-body.page-2 {
+      grid-row: 1 / span 3;
+    }
+
+    /* CSS to appear on screen as if on a letter size paper */
+    @media screen and (min-width: 8.5in) {
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #FAFAFA;
+      }
+
+      .page {
+        width: 8.5in;
+        min-height: 11in;
+        margin: 0.5in auto;
+        border: 1px #D3D3D3 solid;
+        border-radius: 5px;
+        background: white;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .subpage {
+        height: 11in;
+        overflow: hidden;
+      }
+
+      /* undo responsive adjustments when using fixed width page */
+      .page-title {
+        font-size: 36pt;
+      }
+
+      .page-contact {
+        font-size: 7pt;
+      }
+    }
+
+    /* CSS to print on a letter size paper in black and white */
+    @page {
+      size: letter;
+      margin: 0;
+    }
+
+    @media print {
+
+      html,
+      body {
+        color: black;
+        width: 8.5in;
+        height: 11in;
+      }
+
+      .page {
+        margin: 0;
+      }
+
+      .subpage {
+        height: 11in;
+        overflow: hidden;
+      }
+
+      /* arbitrary CSS to make print prettier */
+      h2 {
+        border-bottom: 3px solid black;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="book">
+    <div class="page">
+      <div class="subpage wrapper">
+
+        <section class="page-title">Patrick Trent Sullivan</section>
+
+        <section class="page-contact">
+          <ul class="unchecked">
+            <li>Berkeley, California</li>
+            <li>(510) 290-6962</li>
+            <li>sullivanpt@acm.org</li>
+            <li>https://www.linkedin.com/in/patrick-trent-sullivan/</li>
+            <li>https://github.com/sullivanpt/</li>
+          </ul>
+        </section>
+
+        <article class="page-body">
+          <section>
+            <h2>profile</h2>
+            <p>
+              Over 19 years of professional software development experience, including web, native desktop, native
+              mobile,
+              Linux, Windows, device drivers, and embedded programming.
+            </p>
+          </section>
+
+          <section>
+            <h2>highlights</h2>
+
+            <h3>Isometric Progressive Web Applications</h3>
+            <ul class="checked">
+              <li>Built responsive and immersive web portal with server-side rendered VueJS.</li>
+              <li>Coded AngularJS in PhoneGap mobile client demonstrating benefits of full stack JS applications.</li>
+              <li>Programmed Jest BDD tests with Nodejs to enable fast, accurate refactoring cycles.</li>
+              <li>Implemented e2e testing to verify site availability on Nightwatch.js and Selenium Grid.</li>
+            </ul>
+
+            <h3>Stateless scalable server stacks</h3>
+            <ul class="checked">
+              <li>Principal contributor to open source CAS SSO replacement built on PassportJS and OAuth2orize.</li>
+              <li>Coded Mocha tests to validate MongooseJS model integrity and CAS protocol conformance.</li>
+            </ul>
+
+            <h3>Continuous testing and deployment</h3>
+            <ul class="checked">
+              <li>Prepared scripts for turn-key developer environments and repeatable product deployment.</li>
+              <li>Introduced turn-key load testing using Browsermob and Selenium Grid.</li>
+            </ul>
+
+            <h3>Monitoring and analytics </h3>
+            <ul class="checked">
+              <li>Implemented PCI compliant session based logging optimized for rapid post-mortem and recovery in production.</li>
+              <li>Introduced New Relic full stack application memory to detect and correct performance issues.</li>
+              <li>Integrated Google Analytics and Optimize A/B testing for customer driven product improvement.</li>
+            </ul>
+
+          </section>
+        </article>
+
+        <article class="page-sidebar">
+          <h4>skills</h4>
+          <ul class="unchecked">
+            <li>Vue.js/NuxtJS</li>
+            <li>Vuetify/Bootstrap</li>
+            <li>vue-i18n/messageformat</li>
+            <li>JavaScript</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Jest/Jasmine/Karma</li>
+            <li>Node.js</li>
+            <li>Express</li>
+            <li>SQL/MongoDB</li>
+          </ul>
+          <h4>tools</h4>
+          <ul class="unchecked">
+            <li>docker/AWS ECS</li>
+            <li>Terraform</li>
+            <li>CloudWatch</li>
+            <li>Sumo Logic</li>
+            <li>Debian/CentOS</li>
+            <li>Windows Server</li>
+            <li>Jenkins/CircleCI</li>
+            <li>Puppeteer</li>
+            <li>Nightwatch.js</li>
+            <li>webpack/Grunt</li>
+          </ul>
+          <h4>other</h4>
+          <ul class="unchecked">
+            <li>React/Apollo</li>
+            <li>Java/Spring</li>
+            <li>python/django</li>
+            <li>ASP.NET/C#</li>
+            <li>Win32/C++</li>
+            <li>dsPIC/Arduino</li>
+            <li>Bash</li>
+            <li>LISP</li>
+          </ul>
+        </article>
+
+        <div class="page-icon">
+          <img src="icon.png">
+        </div>
+
+      </div>
+    </div>
+    <div class="page">
+      <div class="subpage wrapper">
+
+        <article class="page-body page-2">
+          <section>
+            <h2>achievements</h2>
+            <ul class="checked">
+              <li>
+                Architected and launched online social web site in fewer than 9 months. The site integrated
+                Elasticsearch document indexing, WebSocketreal-time notifications, WebRTC video capture, tool
+                marketplace with Ogone payment processing, GitLab file sharing, Mandrill email notifications,
+                MySQL and MongoDB data persistence, and seamless integrations of third party services such as
+                Kontagent Analytics and AppThwack on Device Testing. Remotely managed the 6 member multicontinental
+                interdisciplinary
+                team. Selected tools and procedures, assigned daily team priorities,
+                measured progress, and managed expectations to ensure goalalignment for each weekly release.
+              </li>
+              <li>
+                Researched and helped select competitive feature set for launch into government sponsored
+                online bingo market. Measured and optimized server based gaming code to support 1000s of
+                simultaneous players.
+              </li>
+              <li>
+                Implemented media manager tools such as .NET Remoting bridge to WME for video conversion,
+                and C++/CLI interface to MTP for transfer of DRM content to portable players.
+              </li>
+              <li>
+                Our group successfully ported 1.3 million lines of scientific analysis and display code in less than
+                2 years and subsequently launched the company’s first HIPAA compliant FDA registered commercial
+                application. Because of visionary technical direction and excellent communication skills I was
+                quickly promoted to the head of the engineering department where I provided guidance, long term
+                strategic planning and managed a team of electronic, software, and industrial design engineers.
+                Over the next 9 years the resulting MFC C++ code base smoothly evolved into two additional
+                commercial Windows applications and formed the back end for a .NET powered, web based data
+                reduction and scientific analysis application.
+              </li>
+              <li>
+                Programmed a WDM USB 1.1 compliant mini-driver to bulk transfer 778 kilobits per second of
+                instrument data to a Windows XP workstation. Also programmed PIC device side firmware for a
+                USB 2.0 compliant instrument using a PLX Technology chip.
+              </li>
+              <li>
+                Hired to maintain and tailor existing software to each customer's contracted specifications. We
+                successfully applied object-oriented programming and testing techniques to reduce the number of
+                end-user reported software errors. The improved software gained a “skinnable” GUI for greater
+                end-user customization than previously possible, a marketing advantage in the industry.
+              </li>
+              <li>
+                Implemented a software system that reduced skilled labor costs by streamlining the verification
+                procedure for space satellite control sequences. The system leveraged existing scripting tools such
+                as Lex and Awk as well as custom C code to pre-process satellite control sequences.
+              </li>
+              <li>
+                Invented and marketed a successful voice recognition application targeted at Windows Mobile
+                Pocket PC Phone Edition Devices. Ported Ogg Vorbis decoder to the Smartphone.
+              </li>
+              <li>
+                Coded spectral analysis utilities to augment finite element analysis algorithms.
+              </li>
+            </ul>
+          </section>
+        </article>
+
+        <article class="page-sidebar page-2">
+          <h4>education</h4>
+          <ul class="unchecked">
+            <li>
+              <strong>B.A. Computer Science</strong><br>
+              University of California<br>
+              <small>Berkeley CA</small>
+            </li>
+          </ul>
+          <h4>experience</h4>
+          <ul class="unchecked apart">
+            <li>
+              <strong>Online payments processor</strong><br>
+              Emergent Payments<br>
+              <small>San Jose, CA</small>
+            </li>
+
+            <li>
+              <strong>Online gaming solutions</strong><br>
+              CyberArts, Inc.<br>
+              <small>Berkeley, CA</small>
+            </li>
+            <li>
+              <strong>ZAPP Media Manager</strong><br>
+              HandHeld Entertainment, Inc.<br>
+              <small>San Francisco, CA</small>
+            </li>
+            <li>
+              <strong>QA automation</strong><br>
+              AppDynamics, Inc.<br>
+              <small>San Francisco, CA</small>
+            </li>
+            <li>
+              <strong>Embedded systems</strong><br>
+              David Blau Consulting<br>
+              <small>Santa Clara, CA</small>
+            </li>
+            <li>
+              <strong>EEG acquisition and analysis systems</strong><br>
+              SFBRI & SAM Technology<br>
+              <small>San Francisco, CA</small>
+            </li>
+            <li>
+              <strong>PDPA and LDV measurement systems</strong><br>
+              Aerometrics, Inc.<br>
+              <small>Sunnyvale, CA</small>
+            </li>
+            <li>
+              <strong>Galileo project</strong><br>
+              Jet Propulsion Laboratory<br>
+              <small>Pasadena, CA</small>
+            </li>
+            <li>
+              <strong>Super-conducting Super Collider group</strong><br>
+              Lawrence Berkeley Laboratory<br>
+              <small>Berkeley, CA</small>
+            </li>
+            <li>
+              <strong>Human Resources</strong><br>
+              State of Nevada DDP<br>
+              <small>Carson City, NV</small>
+            </li>
+          </ul>
+        </article>
+
+        <section class="page-contact page-2">
+          <ul class="unchecked">
+            <li>Patrick Trent Sullivan</li>
+            <li>Berkeley, California</li>
+            <li>(510) 290-6962</li>
+            <li>sullivanpt@acm.org</li>
+            <li>https://www.linkedin.com/in/patrick-trent-sullivan/</li>
+            <li>https://github.com/sullivanpt/</li>
+          </ul>
+        </section>
+
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
